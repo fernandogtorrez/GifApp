@@ -1,10 +1,19 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
     background-color: rgb(234, 234, 234);
+    background-color: #212121;
   }
+
   body {
     padding: 60px;
+    
   }
+
+  form{
+    display: flex;
+    justify-content: center;
+  }
+
   input {
     background-color: white;
     border-radius: 5px;
@@ -13,24 +22,33 @@
     font-size: 1.2rem;
     outline: none;
     padding: 10px 15px;
-    width: 100%;
+    width: 17rem;
   }
+
   h1 {
+    text-align: center;
     font-size: 3.5rem;
+    color: #fff;
   }
+
   h2 {
     font-size: 2.5rem;
   }
+
   h3 {
     font-size: 2rem;
-    margin-bottom: 5px;
+    text-transform: capitalize;
+    color: #fff;
+    
   }
+
   .card-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .card {
     align-content: center;
     align-items: center;
@@ -45,6 +63,7 @@
     margin-right: 20px;
     overflow: hidden;  
   }
+
   .card p {
     background-color: white;
     flex: 1;
@@ -53,7 +72,149 @@
     padding: 5px 20px 0px 20px;
     text-align: center;
   }
+
   .card img {
     width: 100%;
     max-height: 250px;  
   }
+
+  card-container-image{
+    width: 250px;
+    height: 250px;
+  }
+
+  .card-image{
+    padding: 1em;
+  }
+
+  .card-picture{
+    width: 350px;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .title-image{
+    text-align: center;
+    color: #f3f2ff;
+  }
+
+  .category{
+    text-align: center;
+  }
+
+  .card-category{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .btn-search{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .delete{
+    align-items: center;
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  /*bnt delete*/
+
+  .btn {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
+    position: relative;
+    padding: 1em 2em;
+    border: 0;
+    background-color: #212121;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+   }
+   
+   .btn::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+       #488cfb,
+       #29dbbc,
+       #ddf505,
+       #ff9f0e,
+       #e440bb,
+       #655adc,
+       #488cfb
+     );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+   }
+   
+   .btn:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   .btn,
+   .btn::after {
+    box-sizing: border-box;
+   }
+   
+   .btn:active {
+    --border-width: 5px;
+   }
+
+
+   /*search*/
+
+   /*title*/
+
+   .title-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+   }
+
+   .delete{
+    width: 1px;
+    height: 3px;
+    padding: 1.2rem;
+    color: white;
+   }
+
+   .delete:hover{
+    color: red;
+    transition: .6s;
+   }
+
+ 

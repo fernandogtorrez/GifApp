@@ -1,13 +1,17 @@
 import { useFetchGif } from "../hooks/useFetchGif"
 import { GifItem } from "./GifItem"
 
-export const GifGrid = ({category}) => {
+export const GifGrid = ({category,removeCategory}) => {
 
   const {imagenes, loading} = useFetchGif(category)
   
   return (
     <>
-        <h3>{category}</h3>
+        <div className="card-category">
+          <div className="title-delete">
+            <h3 className="category">{category}</h3>
+            <button className='btn delete' onClick={()=>removeCategory(category)}>X</button>
+          </div>
           {/* Desplegar Listado */}
           <div className="card-grid">
             {
@@ -15,6 +19,7 @@ export const GifGrid = ({category}) => {
             imagenes.map(imagen => <GifItem key={imagen.id} {...imagen}/>)
           }
           </div>
+        </div>
     </>
   )
 }

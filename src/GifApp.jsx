@@ -8,17 +8,37 @@ export const GifApp = () => {
         setCategories([value, ...categories])
     }
 
+    const handleRemove = index => {
+      setCategories(categories.filter((category) => category !== index));
+  };
+
+    const handleRemoveAll = () => {
+      setCategories([]);
+      };
+
   return (
     <>
         {/* Titulo */}
-        <h1>GifApp</h1>
+        <div>
+          <h1>GifApp</h1>
+        </div>
+        
         {/* Input */}
-        <AddCategory addCategory={handleAddCategory}/>
+        <div className='btn-search'>
+          <AddCategory addCategory={handleAddCategory}/>
+          <button className="btn" onClick={handleRemoveAll}>Reset</button>
+        </div>
         {/* Listado de Gif */}
         
-            {categories.map((category) => (
-                <GifGrid key={category} category={category}/>
-            ))}
+        {
+          categories.map((category) => (
+            <GifGrid 
+              className="categories" 
+              key={category} 
+              category={category} 
+              removeCategory={handleRemove}
+              />))
+        }
         </>
   )
 }

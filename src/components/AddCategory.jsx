@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const AddCategory = ({ addCategory }) => {
+export const AddCategory = ({ addCategory}) => {
 
     const [inputValue, setInputValue] = useState('')
 
@@ -17,15 +17,15 @@ export const AddCategory = ({ addCategory }) => {
     }
 
 
-
   return (
     <form onSubmit={handleSubmit}>
         <input 
             type="text"
-            placeholder='Buscar Gif'
+            placeholder='Buscar Gif...'
             value={inputValue}
             onChange={handleInputChange}
         />
+        
     </form>
   )
 }
