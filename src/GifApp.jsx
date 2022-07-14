@@ -9,12 +9,12 @@ export const GifApp = () => {
     }
 
     const handleRemove = index => {
-      setCategories(categories.filter((category) => category !== index));
-  };
+      setCategories(categories.filter(category => category !== index));
+    };
 
     const handleRemoveAll = () => {
       setCategories([]);
-      };
+    };
 
   return (
     <>

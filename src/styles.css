@@ -1,12 +1,11 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: rgb(234, 234, 234);
-    background-color: #212121;
+    
   }
 
   body {
     padding: 60px;
-    
+    background-color: #191A19;
   }
 
   form{
@@ -84,18 +83,45 @@
   }
 
   .card-image{
+    width: 300px;
+    height: 400px;
+    margin: 1em;
     padding: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #ffffffd8; */
+    border-radius: 10px;
+    outline: 1px solid white;
+    outline-offset: -8px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.467);
+    position: relative;
+    overflow: hidden;
   }
 
   .card-picture{
-    width: 350px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    opacity: .8;
+    transition: transform .75s;
+  }
+
+  .card-image:hover .card-picture{
+    transform: scale(1.15);
   }
 
   .title-image{
     text-align: center;
     color: #f3f2ff;
+    position: absolute;
+    bottom: 15px;
+    font-size: 20px;
+    text-shadow: 0 0 1px black;
   }
 
   .category{
@@ -123,6 +149,12 @@
     justify-content: center;
   }
 
+  .btn-delete{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
 
   /*bnt delete*/
 
@@ -133,7 +165,7 @@
     position: relative;
     padding: 1em 2em;
     border: 0;
-    background-color: #212121;
+    background-color: #191A19;
     font-family: "Roboto", Arial, "Segoe UI", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -217,4 +249,8 @@
     transition: .6s;
    }
 
+   .btn:hover{
+    color: red;
+    transition: .6s;
+   }
  

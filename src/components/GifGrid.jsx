@@ -3,7 +3,12 @@ import { GifItem } from "./GifItem"
 
 export const GifGrid = ({category,removeCategory}) => {
 
-  const {imagenes, loading} = useFetchGif(category)
+  const handleFilterGif = id =>{
+    setImagenes(imagenes.filter(imagen => imagen.id !== id));
+    console.log('hola')
+}
+
+  const {imagenes, loading, setImagenes} = useFetchGif(category)
   
   return (
     <>
@@ -16,7 +21,7 @@ export const GifGrid = ({category,removeCategory}) => {
           <div className="card-grid">
             {
             loading ? <h2>Cargando...</h2> :
-            imagenes.map(imagen => <GifItem key={imagen.id} {...imagen}/>)
+            imagenes.map(imagen => <GifItem key={imagen.id} {...imagen} handleFilterGif ={handleFilterGif} />)
           }
           </div>
         </div>
